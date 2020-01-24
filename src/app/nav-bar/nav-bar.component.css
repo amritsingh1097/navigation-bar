@@ -16,9 +16,6 @@
     display: block;
 }
 
-/* :host:not(.isNavPresent) {
-} */
-
 .navbar {
     /* position: fixed; */
     /* top: 0; */
@@ -52,6 +49,14 @@
 
 .nav-item-container {
     display: none;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-item {
+    margin-left: 1.5rem;
 }
 
 .navbar-brand {
