@@ -1,5 +1,23 @@
-<nav-drawer></nav-drawer>
-
-<p>
-nav-bar works!
-</p>
+<nav-drawer [isNavDrawerOpen]="isNavDrawerOpen" (navDrawerToggleEmitter)="navDrawerToggled($event)"></nav-drawer>
+<nav id="navbar" class="navbar">
+    <div class="row">
+        <!-- <div class="col-12"> -->
+            <div class="ham-container">
+                <a (click)="toggleNavDrawer()"><span class="fa fa-navicon"></span></a>
+            </div>
+            <div class="navbar-brand-container">
+                <a routerLink="/" class="navbar-brand">LOGO</a>
+                <!-- <a [href]="['/']" class="navbar-brand">BookMyWorkshop</a> -->
+            </div>
+            <div class="nav-item-container ml-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="/registration" class="nav-link">Register Your Workshop</a>
+                        <!-- <a [href]="['/registration']" class="nav-link">Register Your Workshop</a> -->
+                    </li>
+                    <!-- <li class="nav-item"></li> -->
+                </ul>
+            </div>
+        <!-- </div> -->
+    </div>
+</nav>

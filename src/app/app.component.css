@@ -1,3 +1,25 @@
-p {
-  font-family: Lato;
+:host {
+    position: relative;
+    display: block;
+    left: 0;
+    transition: left 0.3s ease;
+}
+
+:host.nav-drawer-open {
+    left: 70%;
+}
+
+.main {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+@media screen and (min-width: 48rem) {
+
+    :host.nav-drawer-open {
+        left: 0;
+    }
+
 }

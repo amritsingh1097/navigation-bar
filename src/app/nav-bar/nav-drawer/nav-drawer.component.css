@@ -1,0 +1,112 @@
+:host {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    max-height: 100vh;
+    /* width: 70%; */
+    width: 0;
+    top: 0;
+    /* left: -70%; */
+    left: 0;
+    touch-action: none;
+    /* transition: left 0.3s ease; */
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+:host.nav-drawer-open {
+    width: 70vw;
+    /* left: 0; */
+}
+
+.nav-drawer {
+    /* display: block;
+    position: fixed;
+    top: 0;
+    left: 0; */
+    height: 100%;
+    /* max-height: 100vh; */
+    min-width: 70vw;
+    width: 70vw;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(50, 50, 50);
+    /* z-index: 1000; */
+}
+
+.nav-drawer-shadow {
+    position: absolute;
+    display: block;
+    min-height: 100vh;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to left, rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0.2), rgba(0, 0, 0, 0));
+}
+
+.drawer-title-container {
+    position: relative;
+    display: block;
+    padding: 0.8rem 1rem;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.drawer-title-text {
+    font-size: 1.5rem;
+    padding: 0.3125rem 0;
+    margin: 0;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.drawer-list-container {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.drawer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* .drawer-list:first-child {
+    border-top: 1px solid whitesmoke;
+} */
+
+.drawer-list-item {
+    display: block;
+    position: relative;
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    color: lightgray;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.drawer-item-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.drawer-list-item:active > .drawer-item-link {
+    color: gray;
+}
+
+.drawer-link-active {
+    color: white;
+    font-weight: 600;
+}
+
+.drawer-list-item > .drawer-item-link > span {
+    width: 2rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 48rem) {
+
+    :host {
+        display: none;
+    }
+
+}
