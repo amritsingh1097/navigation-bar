@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { NavBarComponent } from './nav-bar.component';
 import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
@@ -13,7 +14,8 @@ import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   exports: [
     NavBarComponent,

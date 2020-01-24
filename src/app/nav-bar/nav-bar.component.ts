@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
   navBgSolid: boolean;
 
   @HostBinding("class.isNavPresent")
-  isNavPresent: boolean = false;
+  isNavPresent: boolean = true;
   isNavDrawerOpen: boolean = false;
 
   @Output()

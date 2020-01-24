@@ -46,10 +46,10 @@ export class NavDrawerComponent implements OnInit {
       item[1].classList.remove("drawer-link-active");
     }
 
-    console.log("Current Path - " + this.currentPath);
-    this.drawerList.get(this.currentPath).classList.add("drawer-link-active");
+    // console.log("Current Path - " + this.currentPath);
+    // this.drawerList.get(this.currentPath).classList.add("drawer-link-active");
 
-    this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
+    // this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
   }
 
   onLinkClick(name: string) {
@@ -65,4 +65,5 @@ export class NavDrawerComponent implements OnInit {
 
     this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
   }
+
 }
