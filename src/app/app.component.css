@@ -1,26 +1,28 @@
 :host {
-    position: relative;
-    display: block;
-    left: 0;
-    transition: left 0.3s ease;
+  position: relative;
+  display: block;
+  left: 0;
+  transition: left 0.3s ease;
 }
 
 :host.nav-drawer-open {
-    left: 70%;
+  left: 70%;
 }
 
 .main {
-    position: relative;
-    display: block;
-    min-height: 150vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+  position: relative;
+  display: block;
+  min-height: 150vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: antiquewhite;
+  padding: 4rem 1rem 0rem 1rem;
 }
 
 @media screen and (min-width: 48rem) {
 
-    :host.nav-drawer-open {
-        left: 0;
-    }
+  :host.nav-drawer-open {
+    left: 0;
+  }
 
 }

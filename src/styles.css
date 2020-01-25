@@ -1,60 +1,60 @@
-/* Add application styles & imports to this file! */
+/* We override some of the classes of bootstrap here. */
+
 @import "~font-awesome/css/font-awesome.css";
-@import "~fontawesome/css/fontawesome.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    line-height: 1.15;
-    overflow-x: hidden;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.15;
+  overflow-x: hidden;
 }
 
 .container-fluid {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: 0;
-    margin-right: 0;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .nav-padding {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 
 .row {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 [class*="col-"] {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 48rem) {
 
-    html, body {
-        overflow-y: overlay;
-    }
+  html, body {
+    overflow-y: overlay;
+  }
 
-    .row {
-        max-width: 75rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .row {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
     
 }

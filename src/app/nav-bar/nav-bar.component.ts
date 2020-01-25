@@ -28,27 +28,16 @@ export class NavBarComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"])
   onScroll($event) {
-    if (this.isNavPresent) {
-      let scrollFactor = 480;
+    let scrollFactor = 150;
 
-      if (this.navBgSolid) {
-        if (window.pageYOffset > 0) {
-          // console.log(window.pageYOffset / 100);
-          this.navElement.classList.add("navbar-shadow");
-        } else {
-          this.navElement.classList.remove("navbar-shadow");
-        }
-      } else {
-        this.navElement.style.backgroundColor =
-          "rgba(255, 255, 255, " + window.pageYOffset / scrollFactor + ")";
+    this.navElement.style.backgroundColor =
+      "rgba(255, 255, 255, " + window.pageYOffset / scrollFactor + ")";
 
-        if (window.pageYOffset / scrollFactor > 1) {
-          console.log(window.pageYOffset / scrollFactor);
-          this.navElement.classList.add("navbar-shadow");
-        } else {
-          this.navElement.classList.remove("navbar-shadow");
-        }
-      }
+    if (window.pageYOffset / scrollFactor > 1) {
+      console.log(window.pageYOffset / scrollFactor);
+      this.navElement.classList.add("navbar-shadow");
+    } else {
+      this.navElement.classList.remove("navbar-shadow");
     }
   }
 
