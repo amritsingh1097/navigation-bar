@@ -10,11 +10,7 @@
 }
 
 .main {
-  position: relative;
-  display: block;
   min-height: 150vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
   background-color: antiquewhite;
   padding: 4rem 1rem 0rem 1rem;
 }

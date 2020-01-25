@@ -1,6 +1,5 @@
 /* We override some of the classes of bootstrap here. */
 
-@import "~font-awesome/css/font-awesome.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 
 *,
@@ -46,10 +45,6 @@ html, body {
 }
 
 @media screen and (min-width: 48rem) {
-
-  html, body {
-    overflow-y: overlay;
-  }
 
   .row {
     max-width: 75rem;
