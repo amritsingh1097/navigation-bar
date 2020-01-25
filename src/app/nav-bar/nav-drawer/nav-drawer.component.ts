@@ -30,36 +30,30 @@ export class NavDrawerComponent implements OnInit {
   ngOnInit() { }
 
   ngAfterViewInit() {
-    console.log("AfterViewInit");
+    let list = document.getElementsByClassName("drawer-item-link");
 
-    let list = (
-      document.getElementsByClassName("drawer-item-link")
-    );
-
-    this.drawerList = new Map();
+    this.drawerList = new Map<string, HTMLAnchorElement>();
+    
+    for (let i in list) {
+      if (list[i].id != undefined) {
+        this.drawerList.set(list[i].id, <HTMLAnchorElement> list[i])
+      }
+    }
 
     this.isNavDrawerOpen = false;
-
-    console.log("Emitting signal from drawer - " + this.isNavDrawerOpen);
 
     for (let item of this.drawerList) {
       item[1].classList.remove("drawer-link-active");
     }
-
-    // console.log("Current Path - " + this.currentPath);
-    // this.drawerList.get(this.currentPath).classList.add("drawer-link-active");
-
-    // this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
   }
 
   onLinkClick(name: string) {
     this.isNavDrawerOpen = false;
 
-    console.log("Emitting signal from drawer - " + this.isNavDrawerOpen);
-
-    for (let item of this.drawerList) {
-      item[1].classList.remove("drawer-link-active");
-    }
+    this.drawerList.forEach((element) => {
+      console.log(element);
+      element.classList.remove("drawer-link-active");
+    })
 
     this.drawerList.get(name).classList.add("drawer-link-active");
 

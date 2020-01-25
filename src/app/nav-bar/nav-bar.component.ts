@@ -34,7 +34,6 @@ export class NavBarComponent implements OnInit {
       "rgba(255, 255, 255, " + window.pageYOffset / scrollFactor + ")";
 
     if (window.pageYOffset / scrollFactor > 1) {
-      console.log(window.pageYOffset / scrollFactor);
       this.navElement.classList.add("navbar-shadow");
     } else {
       this.navElement.classList.remove("navbar-shadow");
@@ -58,21 +57,15 @@ export class NavBarComponent implements OnInit {
 
   toggleNavDrawer() {
     this.isNavDrawerOpen = !this.isNavDrawerOpen;
-    console.log("Toggling Drawer - ", this.isNavDrawerOpen);
-
     this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
   }
 
   navDrawerToggled(isNavDrawerOpen: boolean) {
-    console.log("Emitted signal from drawer - " + isNavDrawerOpen);
-
     this.isNavDrawerOpen = isNavDrawerOpen;
     this.navDrawerToggleEmitter.emit(isNavDrawerOpen);
   }
 
   navDrawerOverlayToggled(isNavDrawerOpen: boolean) {
-    console.log("Emitted signal from drawer overlay - " + isNavDrawerOpen);
-
     this.isNavDrawerOpen = isNavDrawerOpen;
     this.navDrawerToggleEmitter.emit(isNavDrawerOpen);
   }

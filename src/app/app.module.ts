@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faHome, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -13,9 +13,12 @@ library.add(faHome);
 library.add(faPhoneAlt);
 library.add(faEnvelope);
 
+const routes: Routes = [];
+
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule, NavBarModule, FontAwesomeModule ],
+  imports:      [ BrowserModule, RouterModule.forRoot(routes), NavBarModule, FontAwesomeModule ],
   declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  exports:      [ RouterModule ]
 })
 export class AppModule { }
