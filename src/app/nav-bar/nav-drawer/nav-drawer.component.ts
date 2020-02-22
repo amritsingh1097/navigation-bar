@@ -7,7 +7,6 @@ import {
   Output,
   EventEmitter
 } from "@angular/core";
-import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 
 @Component({
   selector: "nav-drawer",
@@ -23,7 +22,6 @@ export class NavDrawerComponent implements OnInit {
   navDrawerToggleEmitter: EventEmitter<boolean> = new EventEmitter();
 
   drawerList: Map<string, HTMLAnchorElement>;
-  currentPath: string;
 
   constructor() { }
 

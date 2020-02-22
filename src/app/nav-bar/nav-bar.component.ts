@@ -1,14 +1,11 @@
 import {
   Component,
-  HostBinding,
   HostListener,
   OnInit,
   Output,
   AfterViewInit,
   EventEmitter
 } from "@angular/core";
-import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
-import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "nav-bar",
@@ -17,10 +14,6 @@ import { Title } from "@angular/platform-browser";
 })
 export class NavBarComponent implements OnInit {
   navElement: HTMLElement;
-  navBgSolid: boolean;
-
-  @HostBinding("class.isNavPresent")
-  isNavPresent: boolean = true;
   isNavDrawerOpen: boolean = false;
 
   @Output()
@@ -47,12 +40,7 @@ export class NavBarComponent implements OnInit {
   ngAfterViewInit() {
     this.navElement = document.getElementById("navbar");
     this.navElement.classList.remove("navbar-shadow");
-    this.navBgSolid = event["navBgSolid"];
-    if (this.navBgSolid) {
-      this.navElement.style.backgroundColor = "rgba(255, 255, 255, 1)";
-    } else {
-      this.navElement.style.backgroundColor = "rgba(255, 255, 255, 0)";
-    }
+    this.navElement.style.backgroundColor = "rgba(255, 255, 255, 0)";
   }
 
   toggleNavDrawer() {

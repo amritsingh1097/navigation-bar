@@ -1,13 +1,9 @@
 :host {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-}
-
-:host.isNavPresent {
-  display: block;
 }
 
 .navbar {
