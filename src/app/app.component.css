@@ -10,9 +10,19 @@
 }
 
 .main {
-  min-height: 150vh;
-  background-color: antiquewhite;
   padding: 4rem 1rem 0rem 1rem;
+}
+
+.dummy-text {
+  font-family: Verdana, Geneva, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-transform: none;
+  text-decoration: none;
+  text-align: left;
 }
 
 @media screen and (min-width: 48rem) {
