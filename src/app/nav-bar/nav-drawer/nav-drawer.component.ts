@@ -14,48 +14,22 @@ import {
   styleUrls: ["./nav-drawer.component.css"]
 })
 export class NavDrawerComponent implements OnInit {
-  @HostBinding("class.nav-drawer-open")
+  
   @Input()
-  isNavDrawerOpen: boolean;
+  @HostBinding('class.open')
+  isDrawerOpen: boolean;
 
   @Output()
-  navDrawerToggleEmitter: EventEmitter<boolean> = new EventEmitter();
-
-  drawerList: Map<string, HTMLAnchorElement>;
+  drawerToggleEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
-  ngOnInit() { }
-
-  ngAfterViewInit() {
-    let list = document.getElementsByClassName("drawer-item-link");
-
-    this.drawerList = new Map<string, HTMLAnchorElement>();
-    
-    for (let i in list) {
-      if (list[i].id != undefined) {
-        this.drawerList.set(list[i].id, <HTMLAnchorElement> list[i])
-      }
-    }
-
-    this.isNavDrawerOpen = false;
-
-    for (let item of this.drawerList) {
-      item[1].classList.remove("drawer-link-active");
-    }
+  ngOnInit() {
   }
 
-  onLinkClick(name: string) {
-    this.isNavDrawerOpen = false;
-
-    this.drawerList.forEach((element) => {
-      console.log(element);
-      element.classList.remove("drawer-link-active");
-    })
-
-    this.drawerList.get(name).classList.add("drawer-link-active");
-
-    this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
+  onNavLinkClicked($event: MouseEvent) {
+    this.isDrawerOpen = false;
+    this.drawerToggleEmitter.emit(this.isDrawerOpen);
   }
 
 }

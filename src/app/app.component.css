@@ -5,30 +5,31 @@
   transition: left 0.3s ease;
 }
 
-:host.nav-drawer-open {
+:host.open {
   left: 70%;
 }
 
-.main {
-  padding: 4rem 1rem 0rem 1rem;
+.nav-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+}
+
+.navbar-padding {
+  display: block;
+  position: relative;
+  margin-top: 3.5rem;
 }
 
 .dummy-text {
+  display: block;
   font-family: Verdana, Geneva, sans-serif;
   font-style: italic;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 1rem;
   letter-spacing: 1px;
-  line-height: 20px;
-  text-transform: none;
-  text-decoration: none;
-  text-align: left;
-}
-
-@media screen and (min-width: 48rem) {
-
-  :host.nav-drawer-open {
-    left: 0;
-  }
-
+  line-height: 1.5rem;
+  text-align: justify;
 }

@@ -3,7 +3,6 @@ import {
   HostListener,
   OnInit,
   Output,
-  AfterViewInit,
   EventEmitter
 } from "@angular/core";
 
@@ -14,17 +13,32 @@ import {
 })
 export class NavBarComponent implements OnInit {
   navElement: HTMLElement;
-  isNavDrawerOpen: boolean = false;
+
+  isDrawerOpen: boolean;
 
   @Output()
-  navDrawerToggleEmitter: EventEmitter<boolean> = new EventEmitter();
+  drawerToggleEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor() { }
+
+  ngOnInit() {
+    this.navElement = null;
+    this.isDrawerOpen = false;
+  }
+
+  ngAfterViewInit() {
+    this.navElement = <HTMLElement> document.getElementById("navbar");
+  }
 
   @HostListener("window:scroll", ["$event"])
-  onScroll($event) {
-    let scrollFactor = 150;
+  onScroll($event: Event) {
+    let scrollFactor = 200;
+    let opacity = (window.pageYOffset / scrollFactor);
+    opacity = opacity < 1 ? opacity : 1;
 
-    this.navElement.style.backgroundColor =
-      "rgba(255, 255, 255, " + window.pageYOffset / scrollFactor + ")";
+    if (opacity <= 1) {
+      this.navElement.style.backgroundColor = "rgba(255, 255, 255, " + opacity + ")";
+    }
 
     if (window.pageYOffset / scrollFactor > 1) {
       this.navElement.classList.add("navbar-shadow");
@@ -33,28 +47,9 @@ export class NavBarComponent implements OnInit {
     }
   }
 
-  constructor() { }
-
-  ngOnInit() { }
-
-  ngAfterViewInit() {
-    this.navElement = document.getElementById("navbar");
-    this.navElement.classList.remove("navbar-shadow");
-    this.navElement.style.backgroundColor = "rgba(255, 255, 255, 0)";
+  toggleNavDrawer(isDrawerOpen: boolean) {
+    this.isDrawerOpen = isDrawerOpen;
+    this.drawerToggleEmitter.emit(this.isDrawerOpen);
   }
 
-  toggleNavDrawer() {
-    this.isNavDrawerOpen = !this.isNavDrawerOpen;
-    this.navDrawerToggleEmitter.emit(this.isNavDrawerOpen);
-  }
-
-  navDrawerToggled(isNavDrawerOpen: boolean) {
-    this.isNavDrawerOpen = isNavDrawerOpen;
-    this.navDrawerToggleEmitter.emit(isNavDrawerOpen);
-  }
-
-  navDrawerOverlayToggled(isNavDrawerOpen: boolean) {
-    this.isNavDrawerOpen = isNavDrawerOpen;
-    this.navDrawerToggleEmitter.emit(isNavDrawerOpen);
-  }
 }

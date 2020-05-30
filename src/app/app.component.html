@@ -1,9 +1,4 @@
-<!-- <nav-bar (navDrawerToggleEmitter)="onNavDrawerToggled($event)"></nav-bar> -->
-<nav-bar></nav-bar>
-<div class="container-fluid nav-padding main">
-  <div class="row">
-    <div class="col-12">
-      <p class="dummy-text">{{fillDummyText()}}</p>
-    </div>
-  </div>
-</div>
+<nav-bar class="nav-bar" (drawerToggleEmitter)="toggleDrawer($event)"></nav-bar>
+<main class="container navbar-padding">
+  <span class="dummy-text">{{getDummyText()}}</span>
+</main>

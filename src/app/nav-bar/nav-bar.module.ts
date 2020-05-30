@@ -13,13 +13,10 @@ import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
     NavDrawerComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    FontAwesomeModule
+    CommonModule
   ],
   exports: [
-    NavBarComponent,
-    NavDrawerComponent
-  ],
+    NavBarComponent
+  ]
 })
 export class NavBarModule { }
