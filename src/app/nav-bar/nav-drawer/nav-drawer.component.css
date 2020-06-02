@@ -12,7 +12,7 @@
   touch-action: none;
 }
 
-:host.open {
+:host.drawer-open {
   width: 70vw;
   opacity: 1;
 }
@@ -63,7 +63,7 @@
     opacity: 1;
   }
   
-  :host.open {
+  :host.drawer-open {
     width: unset;
   }
 

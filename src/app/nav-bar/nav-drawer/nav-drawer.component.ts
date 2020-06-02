@@ -16,7 +16,7 @@ import {
 export class NavDrawerComponent implements OnInit {
   
   @Input()
-  @HostBinding('class.open')
+  @HostBinding('class.drawer-open')
   isDrawerOpen: boolean;
 
   @Output()

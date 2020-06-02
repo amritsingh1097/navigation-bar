@@ -5,7 +5,7 @@
   transition: left 0.3s ease;
 }
 
-:host.open {
+:host.drawer-open {
   left: 70%;
 }
 

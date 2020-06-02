@@ -1,3 +1,7 @@
 /* We override some of the classes of bootstrap here. */
 
 @import "~bootstrap/dist/css/bootstrap.css";
+
+html, body {
+  overflow-x: hidden;
+}

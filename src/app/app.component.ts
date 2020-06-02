@@ -8,7 +8,7 @@ import { Component, HostBinding } from '@angular/core';
 export class AppComponent  {
   name = 'NavigationBarProject';
 
-  @HostBinding("class.open")
+  @HostBinding("class.drawer-open")
   isDrawerOpen: boolean = false;
   
   toggleDrawer(isDrawerOpen: boolean) {

@@ -41,24 +41,24 @@
 	bottom: 26%;
 }
 
-.nav-toggler.open span:nth-child(1) {
+.nav-toggler.drawer-open span:nth-child(1) {
 	top:50%;
 	left: 50%;
 	width: 0%;
 	opacity: 0;
 }
 
-.nav-toggler.open span:nth-child(2) {
+.nav-toggler.drawer-open span:nth-child(2) {
 	top: 50%;
 	transform: translateY(-50%) rotate(-45deg);
 }
 
-.nav-toggler.open span:nth-child(3) {
+.nav-toggler.drawer-open span:nth-child(3) {
 	top: 50%;
 	transform: translateY(-50%) rotate(45deg);
 }
 
-.nav-toggler.open span:nth-child(4) {
+.nav-toggler.drawer-open span:nth-child(4) {
 	bottom:50%;
 	left: 50%;
 	width: 0%;
@@ -67,10 +67,10 @@
 
 .navbar-brand.override {
   position: relative;
-	display: block;
+  display: block;
   margin-left: auto;
-	margin-right: auto;
-	font-weight: bold;
+  margin-right: auto;
+  font-weight: bold;
   color: black;
 }
 
