@@ -23,6 +23,10 @@
   margin-top: 3.5rem;
 }
 
+.main-section {
+  min-height: 125vh;
+}
+
 .dummy-text {
   display: block;
   font-family: Verdana, Geneva, sans-serif;
